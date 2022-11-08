@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/cc4b440d87.js" crossorigin="anonymous"></script>
+    <title>carousel</title>
+</head>
+<body>
+    <div id="slider">
+        <button class="prev" onclick="prev()"><i class="fa-solid fa-arrow-left"></i></button>
+        <div class="content"><img id="img-slider" src="saka7.jpeg" alt=""></div>
+        <button class="next" onclick="next()"><i class="fa-solid fa-arrow-right"></i></button>
+    </div> 
+
+    <script>
+        var images = ['saka.jpeg', 'saka2.jpeg','saka3.jpeg', 'saka4.jpeg', 'saka5.jpeg', 'saka6.jpeg', 'saka8.jpeg', 'saka9.jpeg', 'saka10.jpeg', 'saka7.jpeg'];
+var num = 0;
+
+function next(){
+   var slider = document.getElementById('img-slider');
+   num++;
+   if(num >= images.length){
+      num = 0;
+   }slider.src = images[num];
+}
+function prev(){
+   var slider = document.getElementById('img-slider');
+   num--;
+   if(num < 0){
+      num = images.length -1;
+   }slider.src = images[num];
+
+}
+    </script>
+</body>
+</html>
